@@ -3,7 +3,7 @@ import time
 from BoardManager import BoardManager  
 from GameRule import GameRule    
 
-class GomokuEngine:
+class CaroGame:
     def __init__(self, board_size=15, time_limit=30):
         #Kết hợp nội dung từ các file BoardManager và GameRule
         self.bm = BoardManager(board_size= 15)
