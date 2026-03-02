@@ -1,23 +1,23 @@
 # Caro Game Project
 
 Structure chung hiện tại của project sẽ là như sau: 
-
+```
 Caro_Project/
 │
-├── main.py                 # File chạy chính - Thành Nhân giữ (Kết nối FE & BE)
-├── constants.py            # Quy ước chung về màu sắc, kích thước (Cả nhóm dùng)
+├── main.py                 # File chạy chính
+├── constants.py            # Quy ước chung về màu sắc, kích thước - hiện tại chưa cập nhật
 │
-├── Backend/                # Nhóm 1, 2, 3 làm việc ở đây
-│   ├── BoardManager.py     # Bạn 1: Quản lý ma trận, đặt quân, Undo
-│   ├── GameRule.py         # Bạn 2: Thuật toán kiểm tra 5 quân liên tiếp
-│   └── CaroGame.py         # Bạn 3: Điều phối (Engine), xử lý thời gian, Save/Load
+├── Backend/       
+│   ├── BoardManager.py     # Dữ liệu ma trận, đặt quân, Undo
+│   ├── GameRule.py         # Logic trò chơi (kiểm tra 5 quân liên tiếp, kiểm tra thắng, kiểm tra hòa)
+│   └── CaroGame.py         # bộ xử lý chính kết hợp BoardManager và GameRule, xử lý thời gian, Save/Load
 │
-└── Frontend/               # Nhóm 4, 5, 6 làm việc ở đây
-    ├── Interaction.py      # Bạn 5: Bắt sự kiện chuột, chuyển tọa độ pixel -> grid
-    ├── Render.py           # Bạn 4: Vẽ lưới bàn cờ, vẽ quân cờ
-    ├── UIManager.py        # Bạn 6: Vẽ Menu, nút bấm, đồng hồ đếm ngược
-    └── assets/             # Thư mục con chứa hình ảnh, âm thanh (Bạn 4 quản lý)
-
+└── Frontend/               
+    ├── Interaction.py      # Bắt sự kiện chuột, chuyển tọa độ pixel -> grid
+    ├── Render.py           # Vẽ lưới bàn cờ, vẽ quân cờ
+    ├── UIManager.py        # Vẽ Menu, nút bấm, đồng hồ đếm ngược
+    └── assets/             # Thư mục chứa hình ảnh, âm thanh
+```
 Trong tuần này tụi mình sẽ cùng nhau xử lý phần Backend của Project 
 
 # Hướng Dẫn Code Backend (Caro Game) - Tránh Xung Đột Biến
