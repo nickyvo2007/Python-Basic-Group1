@@ -11,18 +11,24 @@ class BoardManager:
         self.history = []
 
     def reset_board(self):
+        self.current_player=1
+        self.history.clear()
+        self.matrix = [[0 for _ in range(self.size)] for _ in range(self.size)]
         # Dùng để reset game và chơi ván mới
-        pass
 
     def is_valid_pos(self, r, c):
+        if (not isinstance(r,int)) or (not isinstance(c,int)) or r>=15 or r<0 or c>=15 or c<0:
+            return False
+        return True
         #Kiểm tra tọa độ có nằm trong phạm vi bàn cờ hay không
         #Trả về True nếu tọa độ hợp lệ, False nếu không hợp lệ
-        pass
 
     def get_value(self, r, c):
+        if not self.is_valid_pos(r,c):
+            return -1
+        return self.matrix[r][c]
         #Lấy giá trị tại ô (row, col) vừa đánh, trả về -1 nếu tọa độ không hợp lệ
         #Trả về giá trị tại ô đó self.matrix[row][col]
-        pass
 
     def place_stone(self, r, c):
         #Đặt quân cờ vào ô (row, col). 
