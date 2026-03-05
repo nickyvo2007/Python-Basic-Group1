@@ -31,10 +31,20 @@ class BoardManager:
         #Trả về giá trị tại ô đó self.matrix[row][col]
 
     def place_stone(self, r, c):
+        if self.get_value(r,c)!=0:
+            return False
+        else:
+            self.matrix[r][c]=self.current_player
+            self.history.append((r,c,self.current_player))
+            if self.current_player==1:
+                self.current_player=2
+            else:
+                self.current_player=1
+            return True
         #Đặt quân cờ vào ô (row, col). 
         # Trả về True, lưu nước đi vào self.history nếu đặt thành công và chuyển đổi người chơi
         # Trả về False nếu đã có quân cờ hoặc tọa độ không hợp lệ
-        pass
+        
 
     def undo(self):
         #Hoàn tác nước đi gần nhất và cuối cùng
