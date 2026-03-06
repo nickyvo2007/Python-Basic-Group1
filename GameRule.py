@@ -49,5 +49,5 @@ class GameRule:
         return False
 
     def check_draw(self):
-        #Kiểm tra hòa nếu như bàn cờ đã đầy.
+        #Kiểm tra hòa nếu như bàn cờ đã đầy
         return self.bm.is_board_full()
