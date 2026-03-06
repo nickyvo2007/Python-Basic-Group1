@@ -11,7 +11,7 @@ class GameRule:
             r, c: Tọa độ bắt đầu
             dr, dc: Hướng di chuyển và có tổng cộng 4 hướng di chuyển [(1,0), (0, 1), (1, 1), (1, -1)] và 4 hướng ngược lại.
             current_player: Người chơi (1 hoặc 2)
-            count: Số lượng quân cờ liên tiếp
+            count: Số lượng quân cờ liên tiếp   
         
         Trả về:
             count
@@ -49,5 +49,5 @@ class GameRule:
         return False
 
     def check_draw(self):
-        #Kiểm tra hòa nếu như bàn cờ đã đầy
+        #Kiểm tra hòa nếu như bàn cờ đã đầy.
         return self.bm.is_board_full()
