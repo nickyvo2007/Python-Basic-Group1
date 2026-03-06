@@ -16,7 +16,16 @@ class GameRule:
         Trả về:
             count
         """
-        pass
+        counts = 0
+        cur_r = r + dr
+        cur_c = c + dc
+        while (0 <= cur_c < self.bm.size 
+               and 0 <= cur_r < self.bm.size
+               and self.bm.get_value(cur_r, cur_c) == current_player):
+            counts += 1
+            cur_r += dr
+            cur_c += dc
+        return counts
 
     def is_winner(self, r, c):
         """
@@ -28,7 +37,16 @@ class GameRule:
         Trả về:
             True nếu tạo chuỗi thắng, False nếu không
         """
-        pass
+        cur_pos = self.bm.get_value(r, c)
+        if cur_pos == 0:
+            return False
+        directions = [(0,1), (1,0), (1,1), (1,-1)]
+        for dr, dc in directions:
+            total = 1 + self.count_consecutive(r, c, dr, dc, cur_pos) \
+                      + self.count_consecutive(r, c, -dr, -dc, cur_pos) 
+            if total >= 5:
+                return True
+        return False
 
     def check_draw(self):
         #Kiểm tra hòa nếu như bàn cờ đã đầy
