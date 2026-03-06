@@ -42,9 +42,9 @@ class CaroGame:
             json.dump(state_save, file)
         print('Game saved successfully to ', filepath)
 
-    def load_game(self, filepath="save_game.json")
-        try: 
-            open(filepath, 'r') as file:
+    def load_game(self, filepath="save_game.json"):
+        try:
+         with open(filepath, 'r') as file:
             load_state = json.load(file)
             self.bm.board = load_state["board"]
             self.current_turn = load_state["turn"]
